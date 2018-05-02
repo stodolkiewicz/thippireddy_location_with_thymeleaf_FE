@@ -2,10 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Create Location</title>
 </head>
+    <script src="webjars/jquery/3.3.0/jquery.min.js"></script>
+    <script src="webjars/bootstrap/4.1.0/js/bootstrap.js"></script>
+    <link rel="stylesheet"
+      href="webjars/bootstrap/4.1.0/css/bootstrap.min.css" />
 <body>
-
 <form action="saveLocation" method="post">
     <pre>
     Id: <input type="text" name="id"/>
@@ -20,6 +23,9 @@
 
 <a th:href="displayLocation">View All</a>
 
+<div class="alert alert-primary" role="alert">
+    A simple primary alert—check it out!
+</div>
 
 </body>
 </html>
