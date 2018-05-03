@@ -14,7 +14,7 @@ public interface LocationService {
     void deleteLocation(Location location);
     void deleteLocation(Integer id);
 
-    Optional<Location> getLocationById(Integer id);
+    Location getLocationById(Integer id);
 
     List<Location> getAllLocations();
 

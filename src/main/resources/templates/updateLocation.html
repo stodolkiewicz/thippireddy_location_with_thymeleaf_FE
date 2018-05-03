@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:insert="header.html :: header"></div>
+</head>
+<body>
+<div class="container-fluid m-15">
+    <form action="updateLocation" method="post">
+        <pre>
+        Id: <input type="text" name="id" th:value="${location.id}" readonly="true"/>
+        Code: <input type="text" name="code" th:value="${location.code}"/>
+        Name: <input type="text" name="name" th:value="${location.name}"/>
+        Type: Urban <input type="radio" name="type"
+                           th:value="${'URBAN'}"
+                           th:checked="${location.type=='URBAN'}"/>
+              Rural <input type="radio" name="type"
+                           th:value="${'RURAL'}"
+                           th:checked="${location.type=='RURAL'}"/>
+        <input type="submit" value="save"/>
+        </pre>
+    </form>
+
+    [[${location.type=='URBAN' ? 'checked' : ''}]]
+
+</div>
+</body>
+</html>

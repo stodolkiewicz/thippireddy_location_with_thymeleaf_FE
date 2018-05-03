@@ -43,6 +43,20 @@ public class LocationController {
         locationService.deleteLocation(id);
         return "redirect:displayLocation";
     }
+
+    @RequestMapping("/showUpdate")
+    public String showUpdate(@RequestParam("id") Integer id, Model model){
+        Location location = locationService.getLocationById(id);
+        model.addAttribute("location", location);
+        return "updateLocation";
+    }
+
+    @RequestMapping("/updateLocation")
+    public String updateLocation(@ModelAttribute("location") Location location, ModelMap modelMap){
+        locationService.updateLocation(location);
+        return "redirect:displayLocation";
+    }
+
 }
 
 
