@@ -19,7 +19,7 @@ public class LocationController {
 
     @RequestMapping("/showCreate")
     public String showCreate(){
-        return "/createLocation";
+        return "createLocation";
     }
 
     @RequestMapping("/saveLocation")
