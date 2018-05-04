@@ -2,6 +2,7 @@ package com.bharath.location.controllers;
 
 import com.bharath.location.entities.Location;
 import com.bharath.location.service.LocationService;
+import com.bharath.location.util.EmailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,9 @@ import java.util.List;
 public class LocationController {
 
     @Autowired
+    EmailUtil emailUtil;
+
+    @Autowired
     LocationService locationService;
 
     @RequestMapping("/showCreate")
@@ -28,6 +32,7 @@ public class LocationController {
         Location locationSaved = locationService.saveLocation(location);
         String msg = "Location saved with id: " + locationSaved.getId();
         modelMap.addAttribute("msg", msg);
+        emailUtil.sendEmail("spammailera1@gmail.com", "Location saved", "Location saved successfuly and about to return a response.");
         return "createLocation";
     }
 
